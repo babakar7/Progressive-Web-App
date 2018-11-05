@@ -1,7 +1,7 @@
 {
 
     "name": "Instagram Clone",
-    "short-name": "IG Clone",
+    "short_name": "IG Clone",
     "icons":[
       {
         "src":"/src/images/icons/app-icon-48x48.png",
@@ -40,7 +40,7 @@
     }
   ],
 
-  "start_url": "/ndex.html",
+  "start_url": "/index.html",
 
   "scope":".",
 

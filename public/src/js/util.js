@@ -50,9 +50,24 @@ function readAllData(st) {
 function clearStorage(st){
   return dbPromise
     .then((db)=>{
-        db.transaction(st, 'readwrite')
+      var tx =  db.transaction(st, 'readwrite')
         var store = tx.objectStore(st)
         store.clear()
         return tx.complete
     })
+}
+
+function dataURItoBlob(dataURI) {
+
+  // convert base 64 URL to file
+  
+  var byteString = atob(dataURI.split(',')[1]);
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+  var ab = new ArrayBuffer(byteString.length);
+  var ia = new Uint8Array(ab);
+  for (var i = 0; i < byteString.length; i++) {
+    ia[i] = byteString.charCodeAt(i);
+  }
+  var blob = new Blob([ab], {type: mimeString});
+  return blob;
 }

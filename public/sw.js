@@ -1,7 +1,7 @@
 importScripts('/src/js/idb.js')
 importScripts('/src/js/util.js')
 // variables to be updated when cached asset files are changed.
-let cacheStaticName = "static-v5"
+let cacheStaticName = "static-v7"
 let cacheDynamic = "dynamic-v2"
 
 
